@@ -99,6 +99,12 @@ input::placeholder{
     border-bottom: 3px solid #586f8b;
 }
 
+.sorting-buttons-active {
+    color: #bbe4ee !important;
+    text-shadow: #87a0cc 0px 0px 4px !important;
+    border-bottom: 3px solid #69c8c8 !important;
+}
+
 .friends-list {
     position: relative;
     width: 1000px;
@@ -112,14 +118,34 @@ input::placeholder{
     height: 100px;
     margin: 20px;
     filter: grayscale(0.6);
+    z-index: 1;
+    cursor: pointer;
     transition: all 2s ease-in-out;
+}
+
+.friend-selected {
+    z-index: 2 !important;
+    transform: scale(3) !important;
+    margin-left: 450px !important;
+    margin-top: 100px !important;
+}
+
+.age-phone-visible {
+    position: relative !important;
+    height: 20px !important;
+    opacity: 1 !important;
+    background-color: #334464ec !important;
+}
+
+.friend-hide {
+    display: none !important;
 }
 
 .photo {
     position: relative;
     width: 100px;
     height: 100px;
-    border-radius: 3px;
+    border-radius: 3px 3px 0 0;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -137,19 +163,34 @@ input::placeholder{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.age, .phone {
-    position: relative;
-    height: 0px;
-    opacity: 0;
-    transition: all .3s ease-in;
+.name-selected {
+    color: #61efff;
+    border-radius: 0px;
+    box-shadow: none;
+    background-color: #334464ec !important;
 }
 
+.age, .phone {
+    position: relative;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center;
+    font-size: 8px;
+    height: 0px;
+    opacity: 0;
+    color: #57c7ff;
+    background-color: #334464be;
+    border-top: .5px solid #0d121bbe !important;
+    transition: all .5s ease-in;
+}
+/*
 .photo:hover ~ .age, 
 .photo:hover ~ .phone {
     position: relative;
     height: 20px;
     opacity: 1;
 }
+
 .friend:hover {
     transform: scale(2);
     margin: 0 auto;
@@ -159,3 +200,4 @@ input::placeholder{
 .friend:hover ~ .friend {
     
 }
+*/
