@@ -22,16 +22,32 @@ const generateFriendsHtml = () => {
     return html_string + '</div>';
   }
 
-  const addFriendEvent = () => {
+const addFriendEvent = () => {
     const friends = document.getElementsByClassName('friends-list')[0];
     friends.onclick = (e) => {
       const friend = e.target.parentNode;
-      const name_age_phone = document.querySelectorAll(`[id='${friend.id}'] > div:nth-last-of-type(-n+3)`);
-      friend.classList.toggle('friend-selected');
-      name_age_phone[0].classList.toggle('name-selected');
-      name_age_phone[1].classList.toggle('age-phone-visible');
-      name_age_phone[2].classList.toggle('age-phone-visible');
+      toggleSelectedFriend(friend);
+      blurNotSelectedFriends(friend.id, friend);
     }
+}
+
+const toggleSelectedFriend = (friend) => {
+    const name_age_phone = document.querySelectorAll(`[id='${friend.id}'] > div:nth-last-of-type(-n+3)`);
+    friend.classList.toggle('friend-selected');
+    name_age_phone[0].classList.toggle('name-selected');
+    name_age_phone[1].classList.toggle('age-phone-visible');
+    name_age_phone[2].classList.toggle('age-phone-visible');
+}
+
+const blurNotSelectedFriends = (selected_id, friend) => {
+    const friends = document.querySelectorAll('.friend');
+    const filters_container = document.getElementsByClassName('filters-container')[0];
+    filters_container.classList.toggle('filters-container-disable');
+    friends.forEach(friend => {
+      if (friend.id != selected_id) {
+        friend.classList.toggle('friend-not-selected');
+      }
+    });
 }
 
 const render = () => {
