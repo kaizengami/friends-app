@@ -10,7 +10,7 @@ const filtersHtml = () => {
                 <div class="sorting-buttons">
                     <button id="age" value="age">age</button>
                     <button id="reset" value="reset" class="sorting-buttons-active">reset</button>
-                    <button id="name" value="name">a-z/z-a</button>
+                    <button id="name" value="name">a-z</button>
                 </div>
             </div>`;
 }
