@@ -25,7 +25,7 @@ const addFriendEvent = () => {
       if (friend === null) return;
       else {
         toggleSelectedFriend(friend);
-        blurNotSelectedFriends(friend.id, friend);
+        blurNotSelectedFriends(friend.id);
       }
     });
 }
@@ -39,13 +39,13 @@ const toggleSelectedFriend = (friend) => {
 }
 
 const blurNotSelectedFriends = (selectedId) => {
-    const dark_layer = document.querySelector('.dark-layer');
+    const darkLayer = document.querySelector('.dark-layer');
     const filtersContainer = document.querySelector('.filters-container');
-    const friends_list = document.querySelector('.friends-list');
+    const friendsList = document.querySelector('.friends-list');
     const friends = document.querySelectorAll('.friend');
-    dark_layer.classList.toggle('dark-layer-visible');
+    darkLayer.classList.toggle('dark-layer-visible');
     filtersContainer.classList.toggle('filters-container-disable');
-    friends_list.classList.toggle('friends-list-transform');
+    friendsList.classList.toggle('friends-list-transform');
     friends.forEach(friend => {
       if (friend.id != selectedId) {
         friend.classList.toggle('friend-not-selected');

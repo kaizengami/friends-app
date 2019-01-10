@@ -87,8 +87,7 @@ const highlightActiveButtonOption = (button) => {
 
 const addSearchEvent = () => {
     const search = document.getElementById('search');
-    let events = ['input'];
-    events.forEach(event => search.addEventListener(event, (e) => {
+    search.addEventListener('input', (e) => {
             friendsData.forEach((friend, i) => {
                 const friendNode = document.getElementById(friendsData[i].id); 
                 if (inputEqualToFriendName(e, friend)) {
@@ -102,7 +101,6 @@ const addSearchEvent = () => {
             sortVisibleToTop();
             updateDom();
         })
-    );
 }
 
 const sortVisibleToTop = () => {
