@@ -1,3 +1,3 @@
 # Friends App
 
-## [Demo](https://KurosavaAkira.github.io/friends-app/)
+## [Demo](https://kaizengami.github.io/friends-app/)
