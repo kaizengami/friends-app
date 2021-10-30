@@ -204,6 +204,7 @@ input::placeholder{
 }
 
 .name {
+    min-height: 32px;
     font-size: 14px;
     padding: 5px 0;
     text-align: center;
